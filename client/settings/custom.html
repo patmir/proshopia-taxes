@@ -1,4 +1,4 @@
-<template name="customTaxRates">
+<template name="proshopiaTaxRates">
   <div>
     {{> React taxGrid }}
   </div>
@@ -16,7 +16,7 @@
         type="method-update"
         meteormethod="taxes/addRate"
         doc=taxRate
-        id="customTaxRates-update-form"
+        id="proshopiaTaxRates-update-form"
         resetOnSuccess=true
       }}
         <div>
@@ -50,7 +50,7 @@
         schema=taxSchema
         type="method"
         meteormethod="taxes/addRate"
-        id="customTaxRates-insert-form"
+        id="proshopiaTaxRates-insert-form"
         doc=taxRate
         resetOnSuccess=true
       }}

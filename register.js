@@ -2,7 +2,7 @@ import { Reaction } from "/server/api";
 
 Reaction.registerPackage({
   label: "Taxes",
-  name: "reaction-taxes",
+  name: "proshopia-taxes",
   icon: "fa fa-university",
   autoEnable: true,
   settings: {
@@ -35,7 +35,7 @@ Reaction.registerPackage({
       label: "Custom Rates",
       name: "taxes/settings/rates",
       provides: "taxSettings",
-      template: "customTaxRates"
+      template: "proshopiaTaxRates"
     },
     {
       template: "flatRateCheckoutTaxes",

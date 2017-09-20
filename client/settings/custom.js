@@ -13,7 +13,7 @@ import { IconButton, Loading, SortableTable } from "/imports/plugins/core/ui/cli
 /* eslint no-shadow: ["error", { "allow": ["options"] }] */
 /* eslint no-unused-vars: ["error", { "argsIgnorePattern": "[oO]ptions" }] */
 
-Template.customTaxRates.onCreated(function () {
+Template.proshopiaTaxRates.onCreated(function () {
   this.autorun(() => {
     this.subscribe("Taxes");
   });
@@ -25,7 +25,7 @@ Template.customTaxRates.onCreated(function () {
   });
 });
 
-Template.customTaxRates.helpers({
+Template.proshopiaTaxRates.helpers({
   editButton() {
     const instance = Template.instance();
     const state = instance.state;
@@ -189,15 +189,15 @@ Template.customTaxRates.helpers({
 //
 // on submit lets clear the form state
 //
-Template.customTaxRates.events({
-  "submit #customTaxRates-update-form": function () {
+Template.proshopiaTaxRates.events({
+  "submit #proshopiaTaxRates-update-form": function () {
     const instance = Template.instance();
     instance.state.set({
       isEditing: false,
       editingId: null
     });
   },
-  "submit #customTaxRates-insert-form": function () {
+  "submit #proshopiaTaxRates-insert-form": function () {
     const instance = Template.instance();
     instance.state.set({
       isEditing: true,
@@ -248,24 +248,24 @@ Template.customTaxRates.events({
 // Hooks for update and insert forms
 //
 AutoForm.hooks({
-  "customTaxRates-update-form": {
+  "proshopiaTaxRates-update-form": {
     onSuccess: function () {
-      return Alerts.toast(i18next.t("admin.taxSettings.shopCustomTaxRatesSaved"),
+      return Alerts.toast(i18next.t("admin.taxSettings.shopproshopiaTaxRatesSaved"),
         "success");
     },
     onError: function (operation, error) {
       return Alerts.toast(
-        `${i18next.t("admin.taxSettings.shopCustomTaxRatesFailed")} ${error}`, "error"
+        `${i18next.t("admin.taxSettings.shopproshopiaTaxRatesFailed")} ${error}`, "error"
       );
     }
   },
-  "customTaxRates-insert-form": {
+  "proshopiaTaxRates-insert-form": {
     onSuccess: function () {
-      return Alerts.toast(i18next.t("admin.taxSettings.shopCustomTaxRatesSaved"), "success");
+      return Alerts.toast(i18next.t("admin.taxSettings.shopproshopiaTaxRatesSaved"), "success");
     },
     onError: function (operation, error) {
       return Alerts.toast(
-        `${i18next.t("admin.taxSettings.shopCustomTaxRatesFailed")} ${error}`, "error"
+        `${i18next.t("admin.taxSettings.shopproshopiaTaxRatesFailed")} ${error}`, "error"
       );
     }
   }
